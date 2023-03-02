@@ -1,10 +1,10 @@
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-//Name: Eddie G. Pineda Castelan																   //
-//Date: 10/21/2022																				   //
-//Program Statement: Create a program that uses a dynamic array to store as many names and test    //
-//					 scores as inputted by the user. Sort the array, calculate the average,        //
-//					 and then display the sorted array and average to the user.                    //
-/////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Name: Eddie G. Pineda											        //
+//Date: 10/21/2022												//								   //
+//Program Statement: Create a program that uses a dynamic array to store as many names and test    		//
+//					 scores as inputted by the user. Sort the array, calculate the average,	//
+//					 and then display the sorted array and average to the user.		//
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <iostream>
 #include <iomanip>
@@ -17,19 +17,19 @@ struct nameScore //Struct used for the name-score pairs
 	double testScore; //Score
 };
 
-/////////////////////////// User defined functions /////////////////////////////////////////////
+/////////////////////////// User defined functions ///////////////////////////////////////////////////////////////
 double averageScore(nameScore* arr,int arrNum); //Calculates and returns the average of the input array
 void sortArr(nameScore* arr, int arrNum); //Sorts the input array with a selection sort algorithm
 
 int main() {
-/////////////////////////// Setting Variables ///////////////////////////////////////////////////
+/////////////////////////// Setting Variables ////////////////////////////////////////////////////////////////////
 	int listNum; //int variable created to store number of user-defined test scores
 	cout << "Enter the number of scores: "; //Asks user to enter the number of test scores
 	cin >> listNum; //Stores number of test scores
 	nameScore* listArr = new nameScore[listNum]; //Allocates memory and creates listArr to store the test scores
 	double scoreAvg = 0; //Stores the average of the array
 
-/////////////////////////// Inputs of the program  //////////////////////////////////////////////
+/////////////////////////// Inputs of the program  ///////////////////////////////////////////////////////////////
 	for (int i = 0; i < listNum; i++) { //For loop designed to store all user-defined test scores
 		cout << i+1 << ". Enter the student name: ";
 		cin.ignore(); //Ignores until first user input line
@@ -43,7 +43,7 @@ int main() {
 		}
 	}
 	
-/////////////////////////// Outputs of the program  //////////////////////////////////////////////
+/////////////////////////// Outputs of the program  //////////////////////////////////////////////////////////////
 	cout << endl << "Sorted List:" << endl;
 	sortArr(listArr, listNum); //Uses the sortArr function to sort the array
 	for (int i = 0; i < listNum; i++) { //For loop designed to store all user-defined test scores
@@ -57,7 +57,7 @@ int main() {
 	return 0;
 }
 
-/////////////////////////// Function definitions  ////////////////////////////////////////////////
+/////////////////////////// Function definitions  ////////////////////////////////////////////////////////////////
 double averageScore(nameScore* arr, int arrNum) { //Calculates and returns the average of the input array
 	double arrTotal = 0; //Temporary double used to store the sum of all elements within the array
 
